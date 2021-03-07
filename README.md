@@ -35,7 +35,7 @@ generates the class file.
 
 **HelloWorld.class** 
 ```java
-Classfile /home/jack/Repos/extended-bytecode-testing/app/build/classes/java/main/HelloWorld.class
+Classfile HelloWorld.class
   Last modified Mar 7, 2021; size 485 bytes
   SHA-256 checksum f748d932217a27d1ae2dee9af8918294849511b5521002f76bf931512b8c0cc7
   Compiled from "HelloWorld.java"
