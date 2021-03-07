@@ -13,7 +13,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
-@Command(name = "asmifier cli", description = "Simple CLI wrapper around asmifier. Convert a class file to ASM code that generates the class file.")
+@Command(name = "asmifier cli", description = "Simple CLI wrapper around asmifier. Convert a java .class file to ASM code that generates the .class file.")
 public class CLI implements Callable<Integer> {
     @Parameters(index = "0", description = "File path to the class file which will be asmified")
     private String classFilePath;
@@ -29,6 +29,9 @@ public class CLI implements Callable<Integer> {
     @Option(names = { "-o",
             "--output" }, arity = "0..1", description = "Optional file path to write asmifier output into")
     private String outputFilePath = null;
+
+    @Option(names = { "-h", "--help" }, usageHelp = true, description = "Output a usage message")
+    boolean helpRequested;
 
     @Override
     public Integer call() throws Exception {
