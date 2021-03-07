@@ -4,6 +4,7 @@
 package github.jackhenry;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.concurrent.Callable;
 
@@ -33,6 +34,9 @@ public class CLI implements Callable<Integer> {
     public Integer call() throws Exception {
         PrintWriter printWriter;
 
+        if (!filePathExists(classFilePath)) {
+            throw new FileNotFoundException("Unable to find a class file at '" + classFilePath + "'");
+        }
         // Write output to standard out if --output option is not passed
         if (outputFilePath == null) {
             printWriter = new PrintWriter(System.out);
@@ -42,6 +46,16 @@ public class CLI implements Callable<Integer> {
 
         AsmifierWrapper.asmify(classFilePath, printWriter);
         return 0;
+    }
+
+    public static boolean filePathExists(String filePath) {
+        File file = new File(filePath);
+
+        if (!file.exists()) {
+            return false;
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
