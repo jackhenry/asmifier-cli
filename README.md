@@ -1,7 +1,7 @@
 # asmifier-cli
 A simple CLI wrapper around ObjectWeb's [Asmifier](https://asm.ow2.io/javadoc/org/objectweb/asm/util/ASMifier.html).
 
-Pass a java .class file to the CLI to generate the ASM code necessary to generate the .class file.
+Pass a java .class file path to generate the ASM code necessary to generate the .class file.
 
 ## Installation
 Releases are available [here](https://github.com/jackhenry/asmifier-cli/releases/tag/v0.1)
