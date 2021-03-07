@@ -15,15 +15,16 @@ import picocli.CommandLine.Option;
 @Command(name = "asmifier cli", description = "Simple CLI wrapper around asmifier. Convert a class file to ASM code that generates the class file.")
 public class CLI implements Callable<Integer> {
 
-    @Option(names = { "-c", "--class" }, required = true)
+    @Option(names = { "-c",
+            "--class" }, required = true, description = "File path to the class file which will be asmified")
     private String classFilePath;
 
     enum ParseOption {
         SKIP_CODE, SKIP_DEBUG, SKIP_FRAMES, EXPAND_FRAMES
     }
 
-    @Option(names = { "-p", "--parseoption" }, arity = "0..1", description = { "(Optional)",
-            "Parse Options: ${COMPLETION-CANDIDATES}", "Default: EXPAND_FRAMES" })
+    @Option(names = { "-p", "--parseoption" }, arity = "0..1", defaultValue = "EXPAND_FRAMES", description = {
+            "Parse Options: ${COMPLETION-CANDIDATES}", "Default: ${DEFAULT-VALUE}" })
     private ParseOption parseOption = ParseOption.EXPAND_FRAMES;
 
     @Option(names = { "-o",
