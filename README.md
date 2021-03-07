@@ -10,7 +10,10 @@ Releases are available [here](https://github.com/jackhenry/asmifier-cli/releases
 ```
 git clone git@github.com:jackhenry/asmifier-cli.git
 cd asmifier-cli
+# Generate zip distribution
 ./gradlew distZip
+# Or generate jar distribution
+./gradlew jar
 ```
 A distribution zip will be generated in `./app/build/libs/distributions`
 
