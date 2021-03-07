@@ -34,3 +34,9 @@ application {
     // Define the main class for the application.
     mainClass = 'github.jackhenry.CLI'
 }
+
+distributions {
+    main {
+        distributionBaseName = 'asmifier-cli'
+    }
+}
