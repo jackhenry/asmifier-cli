@@ -11,7 +11,7 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "neatlang", description = "neatlang compiler")
+@Command(name = "asmifier cli", description = "Simple CLI wrapper around asmifier. Convert a class file to ASM code that generates the class file.")
 public class CLI implements Callable<Integer> {
 
     @Option(names = { "-c", "--class" })
