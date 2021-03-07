@@ -10,9 +10,11 @@ Releases are available [here](#)
 ```
 git clone git@github.com:jackhenry/asmifier-cli.git
 cd asmifier-cli
-./gradlew distZip
+./gradlew build 
 ```
-A distribution zip will be generated in `./app/build/libs/distributions`
+A distribution zip and tar will be generated in `./app/build/distributions`
+
+Additionally, a jar file with be generated in `./app/build/libs`
 
 ## Usage
 ```
