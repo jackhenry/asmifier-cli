@@ -11,12 +11,11 @@ import java.util.concurrent.Callable;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
+import picocli.CommandLine.Parameters;
 
 @Command(name = "asmifier cli", description = "Simple CLI wrapper around asmifier. Convert a class file to ASM code that generates the class file.")
 public class CLI implements Callable<Integer> {
-
-    @Option(names = { "-c",
-            "--class" }, required = true, description = "File path to the class file which will be asmified")
+    @Parameters(index = "0", description = "File path to the class file which will be asmified")
     private String classFilePath;
 
     enum ParseOption {
